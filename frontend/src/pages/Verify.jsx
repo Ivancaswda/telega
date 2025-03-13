@@ -19,7 +19,7 @@ const Verify = () => {
 
     useEffect( () => {
       verifyPayment({success, userId})
-        navigate('/')
+        navigate('/signup')
     }, [])
 
 
