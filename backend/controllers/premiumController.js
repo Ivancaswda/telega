@@ -22,8 +22,8 @@ const stripePayment = async (request, response) => {
                 },
             ],
             mode: "payment",
-            success_url: `/api/verify?success=true&userId=${userId}`,
-            cancel_url: `/api/verify?success=false&userId=${userId}`,
+            success_url: `https://telega-xegy.onrender.com/verify?success=true&userId=${userId}`,
+            cancel_url: `https://telega-xegy.onrender.com/verify?success=false&userId=${userId}`,
         });
 
         response.json({ success:true,url:session.url})
@@ -31,7 +31,6 @@ const stripePayment = async (request, response) => {
         response.json({success:false, message:error.message})
     }
 }
-
 const verifyStripe = async (request, response) => {
     const {userId, success} = request.body
     try {
